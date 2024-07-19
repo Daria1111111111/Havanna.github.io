@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página oficial de Havanna. Descubre nuestra oferta de productos y locales en todo el mundo.">
+    <title>Havanna en el mundo</title>
+    <link rel="stylesheet" href="CSS/estillos.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- символ для бургера -->
+        </div>
+        <div class="menu">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('menu')">Menu</a>
+            <a href="#" onclick="showPage('contacts')">Contacts</a>
+        </div>
+    </nav>
+    
+    <div id="home" class="page">
+        <header>
+            <h1>Havanna en el mundo</h1>
+        </header>
+        <div class="content">
+            <p>Desde siempre tuvimos claro que no hay objetivo más alto que establecer y cuidar, 
+            por sobre todo, la relación entre nuestra marca y nuestro cliente. 
+            Es a partir de esta premisa de excelencia que hoy hemos decidido ofrecer la calidad 
+            y frescura de nuestros productos, y la calidez de nuestros servicios fuera 
+            de la Argentina.</p>
+            <p>Havanna exporta "El concepto Havanna", replicando el mismo modelo de cafeterías 
+            especializadas desarrollado en la Argentina.</p>
+            <p>Es por eso que con una actitud de fuerte compromiso con el cliente y una muy agresiva 
+            expansión comercial, ahora, y cada día más, usted podrá encontrar 
+            en diversas ciudades del mundo los "Café Havanna", o nuestras góndolas en los mejores 
+            centros comerciales. Y como puntos de distribución, los mejores 
+            centros de venta tales como supermercados y "delicatessen" premium.</p>
+        </div>
+        <div class="map">
+            <img src="img/mapa.png" alt="Mapa de distribución Havanna">
+        </div>
+    </div>
+   
+    <div id="menu" class="page" style="display: none;">
+        <header>
+            <h1>Menu</h1>
+        </header>
+        <div class="container">
+            <div class="image-container">
+                <img src="img/caramel coffee копия.jpg" alt="caramel coffee">
+            </div>
+            <div class="text-container">
+                <h1>Start your day with coffee</h1>
+                <p>Start your day right with our freshly brewed coffee.
+                    Experience the perfect blend of aroma and flavor that sets the tone for a productive and enjoyable day.</p>
+                <button class="view-button">View New Menu</button>
+            </div>
+        </div>
+        <div class="alfajores-section">
+            <h2>Alfajores</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="img/Menu1.png" alt="Menu1">
+                    <h3>CHOCOLATE BLANCO</h3>
+                    <button class="price-button">$6.00</button>
+                </div>
+                <div class="card">
+                    <img src="img/Menu2.png" alt="Menu2">
+                    <h3>LIMON</h3>
+                    <button class="price-button">$5.00</button>
+                </div>
+                <div class="card">
+                    <img src="img/Menu3.png" alt="Menu3">
+                    <h3>Alfajor con Chocolate</h3>
+                    <button class="price-button">$7.00</button>
+                </div>
+                <div class="card">
+                    <img src="img/Menu4.png" alt="Menu4">
+                    <h3>MEDALLONES</h3>
+                    <button class="price-button">$5.50</button>
+                </div>
+                <div class="card">
+                    <img src="img/Menu5.png" alt="Menu5">
+                    <h3>Sandwich</h3>
+                    <button class="price-button">$6.50</button>
+                </div>
+                <div class="card">
+                    <img src="img/Menu6.png" alt="Alfajore">
+                    <h3>Alfajore</h3>
+                    <button class="price-button">$7.50</button>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/BANNER.jpg" alt="BANNER">
+            </div>
+        </div>
+    </div>
+   
+    <div id="contacts" class="page" style="display: none;">
+        <header>
+            <h1>Contacts</h1>
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Escriba lo que desea aclarar." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+    </div>
+    
+    <footer>
+        <div class="icons">
+            <img src="img/face.png" alt="Facebook Icon">
+            <img src="img/instagram.png" alt="Instagram Icon">
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        function showPage(page) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.style.display = 'none');
+
+            const selectedPage = document.getElementById(page);
+            if (selectedPage) {
+                selectedPage.style.display = 'block';
+            }
+
+            // Закрываем меню после выбора страницы на мобильных устройствах
+            const menu = document.querySelector('.menu');
+            menu.classList.remove('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home'); // Показать домашнюю страницу по умолчанию при загрузке
+        });
+    </script>
+</body>
+</html>

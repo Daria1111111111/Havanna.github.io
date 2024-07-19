@@ -1,0 +1,386 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #e0e0e0; /* Светло-серый фон */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 80px; /* Высота меню */
+    position: relative; /* Для бургер-меню */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Легкая тень для разделения от содержимого */
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.menu-icon {
+    display: none; /* Скрываем иконку бургера на десктопе */
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #fd4c00;
+    color: white;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #ff0000;
+    padding: 10px;
+}
+
+.menu a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+
+}
+
+.menu a:hover {
+    background-color: #575757;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Скрываем меню на мобильных устройствах */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block; /* Показываем иконку бургера на мобильных устройствах */
+    }
+}
+/* Основные стили для содержимого страниц */
+.page {
+    display: none; /* Скрывает страницы по умолчанию */
+}
+
+.page.active {
+    display: block; /* Показывает активную страницу */
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.map {
+    text-align: center;
+    margin: 20px;
+}
+
+.map img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.content {
+    background-color: rgb(234, 234, 150);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.content p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+footer {
+    background-color: #e0e0e0; /* Светло-серый фон */
+    padding: 20px;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons img {
+    max-width: 50px;
+    height: auto;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Скрыть меню по умолчанию на мобильных устройствах */
+        flex-direction: column;
+        width: 100%;
+        background-color: #e0e0e0; /* Фон для мобильного меню */
+        position: absolute;
+        top: 80px; /* Расположение меню под логотипом и бургером */
+        left: 0;
+        box-shadow: 0 2px 5px rgba(240, 102, 23, 0.2); /* Тень для мобильного меню */
+    }
+    .menu.show {
+        display: flex; /* Показывает меню при наличии класса show */
+    }
+    .menu a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid #ccc; /* Линия разделения для пунктов меню */
+    }
+    .menu a:last-child {
+        border-bottom: none; /* Убрать нижнюю границу у последнего элемента */
+    }
+    .menu-icon {
+        display: block; /* Показать бургер-меню на мобильных устройствах */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .content p {
+        font-size: 1em;
+    }
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+    max-width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-container {
+    flex: 1;
+    max-width: 50%;
+    padding-left: 20px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.view-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #df7818;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #df7818
+}
+
+.alfajores-section {
+    padding: 20px;
+}
+
+.alfajores-section h2 {
+    margin-top: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.price-button {
+    padding: 10px 20px;
+    background-color: #df7818;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.price-button:hover {
+    background-color: #df7818;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Убирает возможные отступы снизу */
+}
+/* Адаптивная верстка */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
+/* Стили для контейнера изображения */
+.image-container {
+    width: 100%;
+    max-width: 1200px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+}
+.form-container {
+    position: relative; 
+    z-index: 1; 
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 10px; 
+    align-items: start; 
+}
+
+.text-container {
+    grid-column: 1 / span 1; 
+}
+.form-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 17, 17, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px; /* Ограничение максимальной ширины */
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Цвет текста для видимости */
+}
+
+input[type="text"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: hsl(33, 91%, 57%);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: hsl(33, 91%, 57%);
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    textarea {
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 95%;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    textarea {
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        font-size: 16px;
+    }
+}
